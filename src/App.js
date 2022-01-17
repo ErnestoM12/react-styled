@@ -10,19 +10,18 @@ border-radius:0.2em;
 color:#fff;
 ${paddign}
 margin:0.3em;
-font-size:14px;`
+font-size:20px;
 
-const Input = styled.input.attrs(({ placeholder, type }) => {
-  return {
-    placeholder: placeholder || 'ingresar nombre',
-    type: type || 'text',
+@media(max-width:700px){
+  ${getLinearGradient('20deg', secondaryColor, 'red')} 
+  font-size:12px;
+  h1{
+    color:black
+
   }
-})`
-padding: 1em;
-border:1px solid blue;
-margin: 1em;
 
-`
+}`
+
 
 
 const App = () => {
@@ -33,10 +32,6 @@ const App = () => {
           <h1>Hola</h1>
         </div>
       </Header>
-      <Input type='date' />
-      <Input type='text' />
-
-
     </div>
   );
 }
