@@ -13,9 +13,20 @@ color:#fff;
 ${paddign}
 margin:0.3em;
 font-size:14px;
+transition: all 350ms ease-in-out;
+opacity: 0.6;
 /**
-*Estilisando elementon aninado al header en este caso al h1
+*agregando pseudo clases 
 */
+&:hover {
+opacity: 1;
+  
+h1{
+  color:black
+}
+
+}
+
 div{
   background:red
 
@@ -43,9 +54,9 @@ const App = () => {
         <div>
           <h1>Hola</h1>
         </div>
-        <spam className='big'>
+        <span className='big'>
           Ejemplo
-        </spam>
+        </span>
       </Header>
       <SubTitle>
         Ejemplo de subtitulo
