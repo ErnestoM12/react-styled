@@ -7,10 +7,12 @@ import { mainColor, secondaryColor, paddign, getLinearGradient } from './styles'
 const anima = keyframes`
 from{
   ${getLinearGradient('20deg', secondaryColor, mainColor)}
+  transform: scale(1);
 }
 
 to{
   ${getLinearGradient('20deg', secondaryColor, 'white')}
+  transform: scale(0.8);
 
 }`
 
@@ -23,7 +25,8 @@ color:#fff;
 ${paddign}
 margin:0.3em;
 font-size:20px;
-animation:${anima} 1500ms ease-in-out infinite
+animation:${anima} 1500ms ease-in-out infinite;
+animation-direction: alternate;
 `
 const App = () => {
   return (
