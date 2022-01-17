@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
-import { mainColor, secondaryColor, paddign } from './colors'
+import { mainColor, secondaryColor, paddign, getLinearGradient } from './styles'
 
 
 
 
 const Header = styled.header`
-background:linear-gradient(20deg, ${secondaryColor}, ${mainColor}); 
+${getLinearGradient('20deg', 'red', mainColor)}
 text-align:center;
 border-radius:0.2em;
 color:#fff;
