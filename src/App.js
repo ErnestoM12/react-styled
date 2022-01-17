@@ -13,18 +13,32 @@ color:#fff;
 ${paddign}
 margin:0.3em;
 font-size:14px;
+/**
+*Estilisando elementon aninado al header en este caso al h1
+*/
+div{
+  background:green
+
+
+}
+h1{
+color: red;
+}
+
 `
 
 const SubTitle = styled.h2`
-color:${secondaryColor};
-`
+color:${secondaryColor};`
+
 
 
 const App = () => {
   return (
     <div>
       <Header>
-        <h1>Hola</h1>
+        <div>
+          <h1>Hola</h1>
+        </div>
       </Header>
       <SubTitle>
         Ejemplo de subtitulo
