@@ -3,6 +3,31 @@ import styled from 'styled-components';
 import { mainColor, secondaryColor, paddign, getLinearGradient } from './styles'
 
 
+const sizes = {
+  mobile: '375px',
+  tablet: '768px',
+  desktop: '1024px'
+}
+
+const device = {
+  mobile: (styles) => {
+    return `@media(max-width:${sizes.mobile}){
+      ${styles}
+    }`
+  },
+  tablet: (styles) => {
+    return `@media(max-width:${sizes.tablet}){
+      ${styles}
+    }`
+  },
+  desktop: (styles) => {
+    return `@media(max-width:${sizes.desktop}){
+      ${styles}
+    }`
+  },
+}
+
+
 const Header = styled.header`
 ${getLinearGradient('20deg', secondaryColor, mainColor)}
 text-align:center;
@@ -12,15 +37,22 @@ ${paddign}
 margin:0.3em;
 font-size:20px;
 
-@media(max-width:700px){
-  ${getLinearGradient('20deg', secondaryColor, 'red')} 
+
+${device.mobile`
+ ${getLinearGradient('20deg', secondaryColor, 'green')}
   font-size:12px;
   h1{
-    color:black
-
+    color:red
   }
+`}
 
-}`
+${device.tablet`
+ ${getLinearGradient('20deg', secondaryColor, 'red')} 
+  font-size:18px;
+  h1{
+    color:black
+  }
+`}`
 
 
 
