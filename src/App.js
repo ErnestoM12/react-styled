@@ -17,12 +17,16 @@ font-size:14px;
 *Estilisando elementon aninado al header en este caso al h1
 */
 div{
-  background:green
+  background:red
 
 
 }
 h1{
-color: red;
+color: white;
+}
+
+.big {
+  font-size: 50px;
 }
 
 `
@@ -39,6 +43,9 @@ const App = () => {
         <div>
           <h1>Hola</h1>
         </div>
+        <spam className='big'>
+          Ejemplo
+        </spam>
       </Header>
       <SubTitle>
         Ejemplo de subtitulo
