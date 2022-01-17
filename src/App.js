@@ -1,19 +1,16 @@
 import React from 'react'
 import styled from 'styled-components';
-import { mainColor, secondaryColor } from './colors'
+import { mainColor, secondaryColor, paddign } from './colors'
 
-//forma nativa
-//import './styles.css'
 
 
 
 const Header = styled.header`
-/* forma nativa background:linear-gradient(20deg, var(--secondaryColor), var(--mainColor)); */
- background:linear-gradient(20deg, ${secondaryColor}, ${mainColor}); 
+background:linear-gradient(20deg, ${secondaryColor}, ${mainColor}); 
 text-align:center;
 border-radius:0.2em;
 color:#fff;
-padding:0.3em;
+${paddign}
 margin:0.3em;
 font-size:14px;
 `
