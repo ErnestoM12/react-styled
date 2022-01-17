@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import styled, { css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { mainColor, secondaryColor, paddign, getLinearGradient } from './styles'
 
+
+
+const anima = keyframes`
+from{
+  ${getLinearGradient('20deg', secondaryColor, mainColor)}
+}
+
+to{
+  ${getLinearGradient('20deg', secondaryColor, 'white')}
+
+}`
 
 
 const Header = styled.header`
@@ -12,20 +23,8 @@ color:#fff;
 ${paddign}
 margin:0.3em;
 font-size:20px;
+animation:${anima} 1500ms ease-in-out infinite
 `
-
-const baseStyles = css`
-padding: 1em 2em;
-margin: 1em;
-border: ${props => `2px solid ${props.borderColor}`};
-`
-
-const Button = styled.button`
-${baseStyles}`
-
-
-
-
 const App = () => {
   return (
     <div>
@@ -34,12 +33,6 @@ const App = () => {
           <h1>Hola</h1>
         </div>
       </Header>
-      <Button>
-        Dispara
-      </Button>
-      <Button borderColor='green'>
-        otro boton
-      </Button>
     </div>
   );
 }
