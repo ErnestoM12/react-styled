@@ -17,20 +17,28 @@ font-size:14px;`
 
 const Button = styled.button`
 padding: 0.6em 1.5em;
-${(props) => 'background:' + (props.bg || 'black')}; 
-border-radius: 0.1em;
+background:${(props) => props.active ? secondaryColor : mainColor}; 
+border-radius: 0.4em;
 color:#fff;
 border:0;
-margin: 0.4em;`
+margin: 0.4em;
+opacity: 0.5;
+transition:opacity 360ms ease-out;
+
+&:hover{
+  opacity: 1;
+}
+
+`
 
 
 
 
 const App = () => {
 
-  const [Clicks, setClicks] = useState(0)
+  const [active, setActive] = useState(false)
 
-  const aumentar = () => setClicks(Clicks + 1)
+  const toggle = () => setActive(!active)
 
 
   return (
@@ -40,16 +48,14 @@ const App = () => {
           <h1>Hola</h1>
         </div>
       </Header>
-      <Button
-        bg={secondaryColor}
-        onClick={aumentar}
+      <Button active={active}
+        onClick={toggle}
       >
         un boton
       </Button>
-      <Button>
+      <Button >
         un boton
       </Button>
-      {Clicks}
     </div>
   );
 }
